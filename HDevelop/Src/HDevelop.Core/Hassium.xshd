@@ -1,0 +1,261 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="Hassium" extensions=".has" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <!-- The named colors 'Comment' and 'String' are used in SharpDevelop to detect if a line is inside a multiline string/comment -->
+  <Color name="Comment" foreground="#008000" exampleText="# comment" />
+  <Color name="String" foreground="#a31515" exampleText="text = &quot;Hello, World!&quot;"/>
+  <Color name="Punctuation" exampleText="a(b.c);" />
+  <Color name="ValueTypeKeywords" fontWeight="bold" foreground="Red" exampleText="bool b = true;" />
+  <Color name="ReferenceTypeKeywords" foreground="Blue" exampleText="object o;" />
+  <Color name="NumberLiteral" foreground="#a31515" exampleText="3.1415f"/>
+  <Color name="Keywords" foreground="Blue" exampleText="if (a) {} else {}"/>
+  <Color name="Builtins" foreground="Blue" exampleText="if (a) {} else {}"/>
+  <Color name="NamespaceKeywords" fontWeight="bold" foreground="Blue" exampleText="namespace A.B { using System; }"/>
+  <Color name="TrueFalse" foreground="Blue" exampleText="b = false; a = true;" />
+  <Color name="EscapeSequence" foreground="#ba6400" />
+  <Color name="Libs" foreground="#4e91b2"/>
+  <Property name="DocCommentMarker" value="///" />
+
+  <RuleSet name="CommentMarkerSet">
+    <Keywords fontWeight="bold" foreground="Red">
+      <Word>TODO</Word>
+      <Word>FIXME</Word>
+    </Keywords>
+    <Keywords fontWeight="bold" foreground="#E0E000">
+      <Word>HACK</Word>
+      <Word>UNDONE</Word>
+    </Keywords>
+  </RuleSet>
+
+  <!-- This is the main ruleset. -->
+  <RuleSet>
+    <Span color="Comment" ruleSet="CommentMarkerSet">
+      <Begin>\#</Begin>
+    </Span>
+
+    <Span color="Comment" ruleSet="CommentMarkerSet" multiline="true">
+      <Begin>\$</Begin>
+      <End>\$</End>
+    </Span>
+
+    <Span color="String">
+      <Begin>"</Begin>
+      <End>"</End>
+      <RuleSet>
+        <!-- span for escape sequences -->
+        <Span color="EscapeSequence" begin="\\" end="."/>
+      </RuleSet>
+    </Span>
+
+    <Span color="String" multiline="true">
+      <Begin>@"</Begin>
+      <End>"</End>
+      <RuleSet>
+        <!-- span for escape sequences -->
+        <Span begin='""' end=""/>
+      </RuleSet>
+    </Span>
+
+    <Keywords color="TrueFalse">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>null</Word>
+    </Keywords>
+
+    <Keywords color="Keywords">
+      <Word>if</Word>
+      <Word>else</Word>
+      <Word>for</Word>
+      <Word>foreach</Word>
+      <Word>while</Word>
+      <Word>try</Word>
+      <Word>catch</Word>
+      <Word>in</Word>
+      <Word>thread</Word>
+      
+      <Word>func</Word>
+      <Word>return</Word>
+      <Word>finally</Word>
+      <Word>throw</Word>
+      
+      <Word>continue</Word>
+      <Word>break</Word>
+      <Word>lambda</Word>
+      <Word>new</Word>
+      <Word>class</Word>
+      <Word>switch</Word>
+      <Word>case</Word>
+      <Word>default</Word>
+      <Word>unchecked</Word>
+      <Word>this</Word>
+      <Word>property</Word>
+      <Word>value</Word>
+
+      <Word>get</Word>
+      <Word>set</Word>
+    </Keywords>
+
+    <Keywords color="Builtins">
+      <Word>print</Word>
+      <Word>println</Word>
+      <Word>input</Word>
+      <Word>exit</Word>
+      <Word>runtimecall</Word>
+      <Word>system</Word>
+    </Keywords>
+
+    <Keywords color="Libs">
+      <Word>newsql</Word>
+      <Word>sqlquery</Word>
+      <Word>sqlselect</Word>
+      <Word>sqlopen</Word>
+      <Word>sqlclose</Word>
+      <Word>resizearr</Word>
+      <Word>getarr</Word>
+      <Word>setarr</Word>
+      <Word>arrlen</Word>
+      <Word>concatarr</Word>
+      <Word>newarr</Word>
+      <Word>arrayfill</Word>
+      <Word>printarr</Word>
+      <Word>cls</Word>
+      <Word>pause</Word>
+      <Word>setfcol</Word>
+      <Word>setbcol</Word>
+      <Word>getfcol</Word>
+      <Word>getbcol</Word>
+      <Word>toarr</Word>
+      <Word>tobyte</Word>
+      <Word>tohex</Word>
+      <Word>tonum</Word>
+      <Word>tostr</Word>
+      <Word>ddir</Word>
+      <Word>dexists</Word>
+      <Word>dfile</Word>
+      <Word>fexists</Word>
+      <Word>getdir</Word>
+      <Word>mdir</Word>
+      <Word>puts</Word>
+      <Word>readf</Word>
+      <Word>readfarr</Word>
+      <Word>setdir</Word>
+      <Word>abs</Word>
+      <Word>acos</Word>
+      <Word>asin</Word>
+      <Word>atan</Word>
+      <Word>atan2</Word>
+      <Word>ceil</Word>
+      <Word>cos</Word>
+      <Word>cosh</Word>
+      <Word>exp</Word>
+      <Word>floor</Word>
+      <Word>hash</Word>
+      <Word>ln</Word>
+      <Word>log</Word>
+      <Word>log10</Word>
+      <Word>max</Word>
+      <Word>min</Word>
+      <Word>pow</Word>
+      <Word>round</Word>
+      <Word>sin</Word>
+      <Word>sinh</Word>
+      <Word>sqrt</Word>
+      <Word>tan</Word>
+      <Word>tanh</Word>
+      <Word>free</Word>
+      <Word>type</Word>
+      <Word>dowfile</Word>
+      <Word>dowstr</Word>
+      <Word>upfile</Word>
+      <Word>addslashes</Word>
+      <Word>begins</Word>
+      <Word>contains</Word>
+      <Word>getch</Word>
+      <Word>replace</Word>
+      <Word>sformat</Word>
+      <Word>split</Word>
+      <Word>strcat</Word>
+      <Word>strlen</Word>
+      <Word>sstr</Word>
+      <Word>substr</Word>
+      <Word>tolower</Word>
+      <Word>toupper</Word>
+      <Word>currentuser</Word>
+      <Word>datetime</Word>
+      <Word>downfile</Word>
+      <Word>downstr</Word>
+      <Word>array_reverse</Word>
+      <Word>array_fill</Word>
+      <Word>array_concat</Word>
+      <Word>array_length</Word>
+      <Word>array_resize</Word>
+      <Word>array_join</Word>
+      <Word>array_op</Word>
+      <Word>array_select</Word>
+      <Word>array_where</Word>
+      <Word>array_any</Word>
+      <Word>array_first</Word>
+      <Word>array_contains</Word>
+      <Word>array_last</Word>
+      <Word>array_zip</Word>
+      <Word>index</Word>
+      <Word>lastindex</Word>
+      <Word>getfiles</Word>
+      <Word>getdirs</Word>
+      <Word>eval</Word>
+      <Word>range</Word>
+      <Word>Math</Word>
+      <Word>io</Word>
+      <Word>Event</Word>
+      <Word>Object</Word>
+      <Word>toString</Word>
+    </Keywords>
+
+    <Keywords color="ReferenceTypeKeywords">
+      <Word>class</Word>
+      <Word>lambda</Word>
+      <Word>func</Word>
+    </Keywords>
+
+    <Keywords color="NamespaceKeywords">
+      <Word>use</Word>
+      <Word>as</Word>
+    </Keywords>
+
+    <!-- Digits -->
+    <Rule color="NumberLiteral">
+      0[xX][0-9a-fA-F]+  # hex number
+    </Rule>
+
+    <Rule color="NumberLiteral">
+      0[oO][0-7]+  # octal number
+    </Rule>
+
+    <Rule color="NumberLiteral">
+      0[bB][0-1]+  # binary number
+    </Rule>
+
+    <Rule color="NumberLiteral">
+      (	\b\d+(\.[0-9]+)?   #number with optional floating point
+      |	\.[0-9]+           #or just starting with floating point
+      )
+      ([eE][+-]?[0-9]+)? # optional exponent
+    </Rule>
+
+    <!--<Rule color="NumberLiteral">
+      \b0[xX][0-9a-fA-F]+  # hex number
+      |
+      \b0[oO][0-7]+  # octal number
+      |
+      \b0[bB][01]+  # binary number
+      |
+      (	\b\d+(\.[0-9]+)?   #number with optional floating point
+      |	\.[0-9]+           #or just starting with floating point
+      )
+      ([eE][+-]?[0-9]+)? # optional exponent
+    </Rule>-->
+
+    <Rule color="Punctuation">
+      [?,.;()\[\]{}+\-/%*&lt;&gt;^+~!|&amp;]+
+    </Rule>
+  </RuleSet>
+</SyntaxDefinition>

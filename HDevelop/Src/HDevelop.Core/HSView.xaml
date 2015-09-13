@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="HDevelop.Core.HSView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Settings="clr-namespace:HDevelop.Core.Settings"
+             mc:Ignorable="d" d:DesignHeight="300"
+             d:DesignWidth="600">
+    <avalonEdit:TextEditor Grid.Column="0" Name="textEditor" Document="{Binding Document}" 
+                               Background="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=BackgroundColor}" 
+                               Foreground="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=ForegroundColor}"
+                               ShowLineNumbers="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=ShowLineNumbers}"
+                               WordWrap="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=WordWrap}"
+                               FontFamily="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=FontFamily}"
+                               FontSize="{Binding Source={x:Static Settings:EditorOptions.Default}, Path=FontSize}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+</UserControl>
