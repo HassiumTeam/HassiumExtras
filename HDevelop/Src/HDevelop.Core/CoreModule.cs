@@ -68,6 +68,8 @@ namespace HDevelop.Core
             toolbarService.Add(new ToolbarViewModel("Standard", 1) { Band = 1, BandIndex = 1 });
             toolbarService.Get("Standard").Add(menuService.Get("_File").Get("_New"));
             toolbarService.Get("Standard").Add(menuService.Get("_File").Get("_Open"));
+            toolbarService.Get("Standard").Add(menuService.Get("_File").Get("_Save"));
+            toolbarService.Get("Standard").Add(menuService.Get("_File").Get("Save All"));
 
             toolbarService.Add(new ToolbarViewModel("Edit", 1) { Band = 1, BandIndex = 2 });
             toolbarService.Get("Edit").Add(menuService.Get("_Edit").Get("_Undo"));
@@ -77,9 +79,9 @@ namespace HDevelop.Core
             toolbarService.Get("Edit").Add(menuService.Get("_Edit").Get("_Paste"));
 
             toolbarService.Add(new ToolbarViewModel("Debug", 1) { Band = 1, BandIndex = 3 });
-            toolbarService.Get("Debug").Add(new MenuItemViewModel("Debug", 1, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Play.png")), manager.GetCommand("DEBUG")));
-            toolbarService.Get("Debug").Get("Debug").Add(new MenuItemViewModel("Debug and measure time", 1, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Play.png")), manager.GetCommand("DEBUG")) { CommandParameter = "time" });
-            toolbarService.Get("Debug").Get("Debug").Add(new MenuItemViewModel("Debug and show tokens", 2, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Play.png")), manager.GetCommand("DEBUG")) { CommandParameter = "tokens" });
+            toolbarService.Get("Debug").Add(new MenuItemViewModel("Debug", 1, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Start_16.png")), manager.GetCommand("DEBUG")));
+            toolbarService.Get("Debug").Get("Debug").Add(new MenuItemViewModel("Debug and measure time", 1, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Start_16.png")), manager.GetCommand("DEBUG")) { CommandParameter = "time" });
+            toolbarService.Get("Debug").Get("Debug").Add(new MenuItemViewModel("Debug and show tokens", 2, new BitmapImage(new Uri(@"pack://application:,,,/HDevelop.Core;component/Icons/Start_16.png")), manager.GetCommand("DEBUG")) { CommandParameter = "tokens" });
 
             menuService.Get("_Tools").Add(toolbarService.RightClickMenu);
 
@@ -122,23 +124,16 @@ namespace HDevelop.Core
             { Message = "Commands.." });
             var manager = _container.Resolve<ICommandManager>();
 
-            var openCommand = new DelegateCommand(OpenModule);
-            var exitCommand = new DelegateCommand(CloseCommandExecute);
-            var saveCommand = new DelegateCommand(SaveDocument, CanExecuteSaveDocument);
-            var saveAsCommand = new DelegateCommand(SaveAsDocument, CanExecuteSaveAsDocument);
-            var themeCommand = new DelegateCommand<string>(ThemeChangeCommand);
-            var loggerCommand = new DelegateCommand(ToggleLogger);
-            var debugCommand = new DelegateCommand<string>(DebugCmd);
 
+            manager.RegisterCommand("OPEN", new DelegateCommand(OpenModule));
+            manager.RegisterCommand("SAVE", new DelegateCommand(SaveDocument, CanExecuteSaveDocument));
+            manager.RegisterCommand("SAVEAS", new DelegateCommand(SaveAsDocument, CanExecuteSaveAsDocument));
+            manager.RegisterCommand("SAVEALL", new DelegateCommand(SaveAllDocument));
+            manager.RegisterCommand("EXIT", new DelegateCommand(CloseCommandExecute));
+            manager.RegisterCommand("LOGSHOW", new DelegateCommand(ToggleLogger));
+            manager.RegisterCommand("THEMECHANGE", new DelegateCommand<string>(ThemeChangeCommand));
 
-            manager.RegisterCommand("OPEN", openCommand);
-            manager.RegisterCommand("SAVE", saveCommand);
-            manager.RegisterCommand("SAVEAS", saveAsCommand);
-            manager.RegisterCommand("EXIT", exitCommand);
-            manager.RegisterCommand("LOGSHOW", loggerCommand);
-            manager.RegisterCommand("THEMECHANGE", themeCommand);
-
-            manager.RegisterCommand("DEBUG", debugCommand);
+            manager.RegisterCommand("DEBUG", new DelegateCommand<string>(DebugCmd));
         }
 
         private void CloseCommandExecute()
@@ -165,7 +160,7 @@ namespace HDevelop.Core
                 (new MenuItemViewModel("_New", 3,
                                        new BitmapImage(
                                            new Uri(
-                                               @"pack://application:,,,/HDevelop.Core;component/Icons/NewRequest_8796.png")),
+                                               @"pack://application:,,,/HDevelop.Core;component/Icons/NewRequest_16.png")),
                                        manager.GetCommand("NEW"),
                                        new KeyGesture(Key.N, ModifierKeys.Control, "Ctrl + N"))));
 
@@ -173,27 +168,38 @@ namespace HDevelop.Core
                 (new MenuItemViewModel("_Open", 4,
                                        new BitmapImage(
                                            new Uri(
-                                               @"pack://application:,,,/HDevelop.Core;component/Icons/OpenFileDialog_692.png")),
+                                               @"pack://application:,,,/HDevelop.Core;component/Icons/Open_16.png")),
                                        manager.GetCommand("OPEN"),
                                        new KeyGesture(Key.O, ModifierKeys.Control, "Ctrl + O"))));
             menuService.Get("_File").Add(new MenuItemViewModel("_Save", 5,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Save_6530.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Save_16.png")),
                                                                manager.GetCommand("SAVE"),
                                                                new KeyGesture(Key.S, ModifierKeys.Control, "Ctrl + S")));
             menuService.Get("_File").Add(new SaveAsMenuItemViewModel("Save As..", 6,
                                                    new BitmapImage(
                                                        new Uri(
-                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Save_6530.png")),
+                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Save_16.png")),
                                                    manager.GetCommand("SAVEAS"), null, false, false, _container));
+            menuService.Get("_File").Add(new MenuItemViewModel("Save All", 7,
+                                                               new BitmapImage(
+                                                                   new Uri(
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/SaveAll_16.png")),
+                                                               manager.GetCommand("SAVEALL"),
+                                                               new KeyGesture(Key.S, ModifierKeys.Control | ModifierKeys.Shift, "Ctrl + Shift + S")));
 
-            menuService.Get("_File").Add(new MenuItemViewModel("Close", 8, null, manager.GetCommand("CLOSE"),
+
+            menuService.Get("_File").Add(new MenuItemViewModel("Close", 8, new BitmapImage(
+                                                       new Uri(
+                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Close_16.png")), manager.GetCommand("CLOSE"),
                                                                new KeyGesture(Key.F4, ModifierKeys.Control, "Ctrl + F4")));
 
             menuService.Get("_File").Add(recentFiles.RecentMenu);
 
-            menuService.Get("_File").Add(new MenuItemViewModel("E_xit", 101, null, manager.GetCommand("EXIT"),
+            menuService.Get("_File").Add(new MenuItemViewModel("E_xit", 101, new BitmapImage(
+                                                       new Uri(
+                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Quit_16.png")), manager.GetCommand("EXIT"),
                                                                new KeyGesture(Key.F4, ModifierKeys.Alt, "Alt + F4")));
 
 
@@ -201,29 +207,35 @@ namespace HDevelop.Core
             menuService.Get("_Edit").Add(new MenuItemViewModel("_Undo", 1,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Undo_16x.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Undo_16.png")),
                                                                ApplicationCommands.Undo));
             menuService.Get("_Edit").Add(new MenuItemViewModel("_Redo", 2,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Redo_16x.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Redo_16.png")),
                                                                ApplicationCommands.Redo));
             menuService.Get("_Edit").Add(MenuItemViewModel.Separator(15));
             menuService.Get("_Edit").Add(new MenuItemViewModel("Cut", 20,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Cut_6523.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Cut_16.png")),
                                                                ApplicationCommands.Cut));
             menuService.Get("_Edit").Add(new MenuItemViewModel("Copy", 21,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Copy_6524.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Copy_16.png")),
                                                                ApplicationCommands.Copy));
             menuService.Get("_Edit").Add(new MenuItemViewModel("_Paste", 22,
                                                                new BitmapImage(
                                                                    new Uri(
-                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Paste_6520.png")),
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Paste_16.png")),
                                                                ApplicationCommands.Paste));
+            menuService.Get("_Edit").Add(MenuItemViewModel.Separator(23));
+            menuService.Get("_Edit").Add(new MenuItemViewModel("_Find", 22,
+                                                               new BitmapImage(
+                                                                   new Uri(
+                                                                       @"pack://application:,,,/HDevelop.Core;component/Icons/Find_16.png")),
+                                                               ApplicationCommands.Find));
 
             menuService.Add(new MenuItemViewModel("_View", 3));
 
@@ -231,7 +243,7 @@ namespace HDevelop.Core
                 menuService.Get("_View").Add(new MenuItemViewModel("_Logger", 1,
                                                                    new BitmapImage(
                                                                        new Uri(
-                                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Undo_16x.png")),
+                                                                           @"pack://application:,,,/HDevelop.Core;component/Icons/Logger_16.png")),
                                                                    manager.GetCommand("LOGSHOW"))
                 { IsCheckable = true, IsChecked = logger.IsVisible });
 
@@ -306,6 +318,14 @@ namespace HDevelop.Core
                 workspace.ActiveDocument.Handler.SaveContent(workspace.ActiveDocument, true);
                 manager.Refresh();
             }
+        }
+        private void SaveAllDocument()
+        {
+            IWorkspace workspace = _container.Resolve<AbstractWorkspace>();
+            ICommandManager manager = _container.Resolve<ICommandManager>();
+            workspace.Documents.All(x => x.Handler.SaveContent(x));
+            //workspace.ActiveDocument.Handler.SaveContent(workspace.ActiveDocument);
+            manager.Refresh();
         }
         #endregion
 

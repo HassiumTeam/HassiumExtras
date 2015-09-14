@@ -105,16 +105,20 @@
                     <RowDefinition MinHeight="20" Height="Auto " />
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Name="CheckIcon"
-                        Width="16" Height="16" Visibility="Visible" Margin="6,0,6,0" Background="Transparent" BorderThickness="1"
+                        Width="20" Height="20" Visibility="Visible" Margin="4,0,4,0" Background="Transparent" BorderThickness="1"
                         BorderBrush="Transparent">
-                    <ContentPresenter Name="Icon" HorizontalAlignment="Center" MaxHeight="16" MaxWidth="16"
+                    <ContentPresenter Name="Icon" HorizontalAlignment="Center" MaxHeight="20" MaxWidth="20"
                                       Margin="0,0,0,0" VerticalAlignment="Center" ContentSource="Icon" />
                 </Border>
-                <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Name="Check" Width="16"
+                <!--<Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Name="Check" Width="16"
                         Height="16" Visibility="Collapsed" Margin="6,0,6,0" Background="{DynamicResource WhiteColorBrush}" BorderThickness="1"
                         BorderBrush="{DynamicResource SeparatorColorBrush}">
-                    <Path Name="CheckMark" Width="7" Height="7" Visibility="Hidden" SnapsToDevicePixels="False"
+                    <Path Name="CheckMark" Width="7" Height="7" Visibility="Hidden" Margin="1, 1, 0, 0" SnapsToDevicePixels="False"
                           Stroke="{DynamicResource BlackColorBrush}" StrokeThickness="2" Data="M 0 0 L 7 7 M 0 7 L 7 0" />
+                </Border>-->
+                <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Name="Check" Width="16"
+                        Height="16" Margin="6,0,6,0" Background="Transparent" >
+                    <Image Source="../../../Core/Icons/Radio_Unchecked.png" Margin="0,0,0,0" Width="16" Height="16" Visibility="Hidden" VerticalAlignment="Center" Name="CheckP" HorizontalAlignment="Center" />
                 </Border>
                 <ContentPresenter Name="HeaderHost" Grid.Column="1" VerticalAlignment="Center" ContentSource="Header"
                                   RecognizesAccessKey="True" />
@@ -127,9 +131,9 @@
                 <Setter TargetName="CheckIcon" Property="Visibility" Value="Hidden" />
             </Trigger>
             <Trigger Property="IsChecked" Value="true">
-                <Setter TargetName="CheckMark" Property="Visibility" Value="Hidden" />
+                <!--<Setter TargetName="CheckMark" Property="Visibility" Value="Hidden" />-->
+                <Setter TargetName="CheckP" Property="Source" Value="../../../Core/Icons/Radio_Unchecked.png" />
                 <Setter TargetName="CheckIcon" Property="Visibility" Value="Visible" />
-                <Setter TargetName="CheckIcon" Property="Background" Value="{DynamicResource WhiteColorBrush}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -138,7 +142,8 @@
                     <Condition Property="Icon" Value="{x:Null}" />
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                    <!--<Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />-->
+                    <Setter TargetName="CheckP" Property="Source" Value="../../../Core/Icons/Radio_Checked.png" />
                 </MultiTrigger.Setters>
             </MultiTrigger>
             <MultiTrigger>
@@ -147,7 +152,7 @@
                     <Condition Property="Icon" Value="{x:Null}" />
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter TargetName="Check" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="CheckP" Property="Visibility" Value="Visible" />
                     <Setter TargetName="Icon" Property="Visibility" Value="Hidden" />
                 </MultiTrigger.Setters>
             </MultiTrigger>
@@ -174,7 +179,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition MinHeight="20" Height="Auto " />
                 </Grid.RowDefinitions>
-                <ContentPresenter Grid.Column="0" Name="Icon" MaxHeight="16" MaxWidth="16" Margin="0,0,0,0"
+                <ContentPresenter Grid.Column="0" Name="Icon" MaxHeight="20" MaxWidth="20" Margin="0,0,0,0"
                                   VerticalAlignment="Center" ContentSource="Icon" />
                 <ContentPresenter Name="HeaderHost" Grid.Column="1" VerticalAlignment="Center" ContentSource="Header"
                                   RecognizesAccessKey="True" />

@@ -23,7 +23,7 @@ using Microsoft.Win32;
 namespace HDevelop.Core
 {
     [FileContent("Hassium code files", "*.has", 1)]
-    [NewContent("Hassium code files", 1, "Creates a new Hassium file", "pack://application:,,,/HDevelop.Core;component/Icons/Hassium256.png")]
+    [NewContent("Hassium code file", 1, "Creates a new Hassium file", "pack://application:,,,/HDevelop.Core;component/Icons/Hassium64.png")]
     internal class HSHandler : IContentHandler
     {
         /// <summary>
@@ -206,6 +206,7 @@ namespace HDevelop.Core
                     {
                         File.WriteAllText(location, mdModel.Document.Text);
                         mdModel.SetDirty(false);
+                        _loggerService.Log("Saved active document as " + mdModel.Document.Text, LogCategory.Info, LogPriority.Low);
                         return true;
                     }
                     catch (Exception exception)
@@ -222,6 +223,7 @@ namespace HDevelop.Core
                 {
                     File.WriteAllText(location, mdModel.Document.Text);
                     mdModel.SetDirty(false);
+                    _loggerService.Log("Saved active document as " + mdModel.Document.Text, LogCategory.Info, LogPriority.Low);
                     return true;
                 }
                 catch (Exception exception)

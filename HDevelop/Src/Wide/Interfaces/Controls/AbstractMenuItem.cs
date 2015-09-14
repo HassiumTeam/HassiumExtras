@@ -72,7 +72,7 @@ namespace Wide.Interfaces.Controls
                 string value = Header.Replace("_", "");
                 if (!string.IsNullOrEmpty(InputGestureText))
                 {
-                    value += " " + InputGestureText;
+                    value += " (" + InputGestureText.Replace(" ", "") + ")";
                 }
                 return value;
             }

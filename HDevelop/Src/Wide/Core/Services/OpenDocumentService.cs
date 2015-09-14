@@ -147,7 +147,7 @@ namespace Wide.Core.Services
                             }
                         }
 
-                        _logger.Log("Opening file" + location + " !!", LogCategory.Info, LogPriority.Low);
+                        _logger.Log("Opening file " + location, LogCategory.Info, LogPriority.Low);
 
                         // Publish the event to the Application - subscribers can use this object
                         _eventAggregator.GetEvent<OpenContentEvent>().Publish(openValue);
@@ -197,7 +197,7 @@ namespace Wide.Core.Services
                     {
                         if (contentViewModel.Model.Location.Equals(openValue.Model.Location))
                         {
-                            _logger.Log("Document " + contentViewModel.Model.Location + "already open.",
+                            _logger.Log("Document " + contentViewModel.Model.Location + " already open.",
                                         LogCategory.Info,
                                         LogPriority.Low);
 
@@ -209,7 +209,7 @@ namespace Wide.Core.Services
                     }
                 }
 
-                _logger.Log("Opening content with " + contentID + " !!", LogCategory.Info, LogPriority.Low);
+                _logger.Log("Opening " + (contentID.StartsWith("FILE:##:") ? "file " + contentID.Substring(8) : contentID), LogCategory.Info, LogPriority.Low);
 
                 // Publish the event to the Application - subscribers can use this object
                 _eventAggregator.GetEvent<OpenContentEvent>().Publish(openValue);

@@ -38,7 +38,7 @@
             <TextBlock.Effect>
                 <DropShadowEffect ShadowDepth="1" Color="#99ffffff" />
             </TextBlock.Effect>
-            <!--<TextBlock.Triggers>
+            <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Binding.TargetUpdated">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="True">
@@ -46,7 +46,7 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </TextBlock.Triggers>-->
+            </TextBlock.Triggers>
         </TextBlock>
 
         <ProgressBar IsIndeterminate="True" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="6" />

@@ -230,6 +230,7 @@ namespace Wide.Core.Services
                     {
                         File.WriteAllText(location, textModel.Document.Text);
                         textModel.IsDirty = false;
+                        _loggerService.Log("Saved active document as " + textModel.Document.Text, LogCategory.Info, LogPriority.Low);
                         return true;
                     }
                     catch (Exception exception)
@@ -246,6 +247,7 @@ namespace Wide.Core.Services
                 {
                     File.WriteAllText(location, textModel.Document.Text);
                     textModel.IsDirty = false;
+                    _loggerService.Log("Saved active document as " + textModel.Document.Text, LogCategory.Info, LogPriority.Low);
                     return true;
                 }
                 catch (Exception exception)

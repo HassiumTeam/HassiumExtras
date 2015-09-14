@@ -74,7 +74,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserBehavior.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="HSHandler.cs" />
     <Compile Include="HSModel.cs" />
@@ -110,34 +109,51 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Copy_6524.png" />
-    <Resource Include="Icons\Cut_6523.png" />
-    <Resource Include="Icons\OpenFileDialog_692.png" />
-    <Resource Include="Icons\Paste_6520.png" />
-    <Resource Include="Icons\Redo_16x.png" />
-    <Resource Include="Icons\Save_6530.png" />
-    <Resource Include="Icons\Undo_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\NewRequest_8796.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Play.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="HSView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Hassium256.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Wide\Wide.csproj">
       <Project>{9f20f5ef-4f7e-4ae2-a462-4cd2256fb3ff}</Project>
       <Name>Wide</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Copy_16.png" />
+    <Resource Include="Icons\Cut_16.png" />
+    <Resource Include="Icons\NewRequest_16.png" />
+    <Resource Include="Icons\Paste_16.png" />
+    <Resource Include="Icons\Redo_16.png" />
+    <Resource Include="Icons\Save_16.png" />
+    <Resource Include="Icons\Start_16.png" />
+    <Resource Include="Icons\Undo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Hassium256.png" />
+    <Resource Include="Icons\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Find_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Hassium64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SaveAll_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Quit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Open_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Logger_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

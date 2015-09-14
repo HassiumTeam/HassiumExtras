@@ -54,10 +54,10 @@ namespace Wide.Interfaces.Controls
         {
             if (cvm != null)
             {
-                this.Header = "Save " + cvm.Title + " As...";
+                this.Header = "Save " + cvm.Title + " as...";
             }
             else
-            { this.Header = "Save As..."; }
+            { this.Header = "Save as..."; }
         }
     }
 }
