@@ -1,0 +1,12 @@
+D:\Documents\GitHub\HassiumExtras\HDevelop\Build\HDevelop.Core.dll
+D:\Documents\GitHub\HassiumExtras\HDevelop\Build\HDevelop.Core.pdb
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HSView.g.cs
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core_MarkupCompile.cache
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core_MarkupCompile.lref
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HSView.baml
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.g.resources
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.Properties.Resources.resources
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.csproj.GenerateResource.Cache
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.dll
+D:\Documents\GitHub\HassiumExtras\HDevelop\Src\HDevelop.Core\obj\Release\HDevelop.Core.pdb

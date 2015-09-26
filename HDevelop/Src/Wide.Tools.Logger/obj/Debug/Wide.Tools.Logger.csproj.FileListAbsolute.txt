@@ -1,0 +1,11 @@
+D:\Téléchargements\Wide-master\Wide-master\Build\Internal\Wide.Tools.Logger.dll
+D:\Téléchargements\Wide-master\Wide-master\Build\Internal\Wide.Tools.Logger.pdb
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.csprojResolveAssemblyReference.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\LoggerView.baml
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\LoggerView.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger_MarkupCompile.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.g.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.Properties.Resources.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.csproj.GenerateResource.Cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.dll
+D:\Téléchargements\Wide-master\Wide-master\Src\Wide.Tools.Logger\obj\Debug\Wide.Tools.Logger.pdb

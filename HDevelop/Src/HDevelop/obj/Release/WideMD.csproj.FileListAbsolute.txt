@@ -1,0 +1,12 @@
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.exe.config
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.exe
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.pdb
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\AppSplash.baml
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\AppSplash.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\App.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD_MarkupCompile.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD.g.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD.Properties.Resources.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD.csproj.GenerateResource.Cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD.exe
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Release\WideMD.pdb

@@ -1,0 +1,13 @@
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.Core.dll
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.Core.pdb
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.csprojResolveAssemblyReference.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\MDView.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core_MarkupCompile.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core_MarkupCompile.lref
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\MDView.baml
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.g.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.Properties.Resources.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.csproj.GenerateResource.Cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.dll
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\WideMD.Core\obj\Release\WideMD.Core.pdb

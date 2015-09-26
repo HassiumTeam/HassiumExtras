@@ -1,0 +1,13 @@
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.exe.config
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.exe
+D:\Téléchargements\Wide-master\Wide-master\Build\WideMD.pdb
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.csprojResolveAssemblyReference.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\AppSplash.baml
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\AppSplash.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\App.g.cs
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD_MarkupCompile.cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.g.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.Properties.Resources.resources
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.csproj.GenerateResource.Cache
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.exe
+D:\Téléchargements\Wide-master\Wide-master\Src\Test\Wide-MD\obj\Debug\WideMD.pdb
